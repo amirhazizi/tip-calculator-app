@@ -3,6 +3,7 @@ const tipsBtn = document.querySelectorAll(".tip-btn")
 const personInput = document.querySelector("#person")
 const tipAmount = document.querySelector("#tipAmount")
 const total = document.querySelector("#total")
+const resetBtn = document.querySelector(".result-reset")
 let bill,
   persons,
   tip = 0
@@ -17,19 +18,7 @@ personInput.addEventListener("keyup", () => {
   persons = parseInt(personInput.value)
   calculateTip(bill, tip, persons)
 })
-// function input error checker
-function activeError(selection, value) {
-  if (!value || value <= 0) {
-    selection.classList.add("error-input")
-    selection.nextElementSibling.classList.add("active")
-    return false
-  } else {
-    selection.classList.remove("error-input")
-    selection.nextElementSibling.classList.remove("active")
-    return true
-  }
-}
-//   console.log(value)
+// get tip for tip btns
 tipsBtn.forEach((btn) => {
   btn.addEventListener("click", () => {
     tipsBtn.forEach((b) => {
@@ -44,12 +33,34 @@ tipsBtn.forEach((btn) => {
   })
 })
 
+// function input error checker
+function activeError(selection, value) {
+  if (!value || value <= 0) {
+    selection.classList.add("error-input")
+    selection.nextElementSibling.classList.add("active")
+    return false
+  } else {
+    selection.classList.remove("error-input")
+    selection.nextElementSibling.classList.remove("active")
+    return true
+  }
+}
+resetBtn.addEventListener("click", () => {
+  if (resetBtn.classList.contains("active-reset")) {
+    resetBtn.classList.remove("active-reset")
+    resetValues()
+  }
+})
+// function calcualteTip and total
 function calculateTip(bill, tip, persons) {
   if (bill && tip && persons) {
     const tipAmo = (bill * tip) / 100 / persons
     const totalAmo = bill / persons + tip
     tipAmount.textContent = `$${tipAmo.toFixed(1)}`
     total.textContent = `$${totalAmo.toFixed(2)}`
+    if (!resetBtn.classList.contains("active-reset")) {
+      resetBtn.classList.add("active-reset")
+    }
     console.log({
       tipAmount: tipAmo,
       total: totalAmo,
@@ -58,4 +69,19 @@ function calculateTip(bill, tip, persons) {
       persons: persons,
     })
   }
+}
+
+// function for reset
+function resetValues() {
+  bill = 0
+  persons = 0
+  tip = 0
+  billInput.value = ""
+  personInput.value = ""
+  tipsBtn.forEach((btn) => {
+    if (btn.classList.contains("selected-btn"))
+      btn.classList.remove("selected-btn")
+  })
+  tipAmount.textContent = `$00.0`
+  total.textContent = `$00.0`
 }

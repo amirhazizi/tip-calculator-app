@@ -15,6 +15,7 @@ body {
 main {
   width: 100%;
   margin: 1rem 0;
+  // header
   .spli-header {
     text-align: center;
     text-transform: uppercase;
@@ -23,13 +24,16 @@ main {
     margin-bottom: 1rem;
     color: $cl-Verydarkcyan;
   }
+  // container
   .container {
     padding: 1rem 1.3rem;
     background: white;
     border-radius: $radius-3;
     display: grid;
     gap: 1rem;
+    // calculator
     .spli {
+      // bill input
       &-bill {
         position: relative;
         margin-bottom: 1rem;
@@ -50,6 +54,7 @@ main {
           visibility: hidden;
         }
       }
+      // tip selection
       &-tips {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
@@ -67,6 +72,7 @@ main {
           }
         }
       }
+      // person input
       &-person {
         position: relative;
         margin-bottom: 1rem;
@@ -88,6 +94,7 @@ main {
         }
       }
     }
+    // result content
     .result {
       background: $cl-Verydarkcyan;
       color: white;
@@ -96,6 +103,7 @@ main {
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
+      // tip/amount
       &-tip {
         display: flex;
         justify-content: space-between;
@@ -115,6 +123,7 @@ main {
           font-size: 1.4rem;
         }
       }
+      // total/amount
       &-total {
         display: flex;
         justify-content: space-between;
@@ -147,7 +156,7 @@ main {
     }
   }
 }
-// active
+// active event
 main {
   .container {
     .active {

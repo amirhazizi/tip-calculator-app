@@ -15,12 +15,17 @@
   </head>
   <body>
     <main>
+      <!-- header -->
       <h1 class="spli-header">spli<br />tter</h1>
+      <!-- calculator container -->
       <div class="container">
+        <!-- calculator content -->
         <div class="spli">
-          <label for="Bill">Bill</label>
+          <!-- bill label -->
+          <label for="bill">Bill</label>
+          <!-- bill input container -->
           <div class="spli-bill">
-            <input type="text" name="Bill" placeholder="0" id="bill" />
+            <input type="text" name="bill" placeholder="0" id="bill" />
             <p class="spli-bill-error">Can't be zero</p>
             <img
               class="spli-bill-dollar"
@@ -28,13 +33,21 @@
               alt=""
             />
           </div>
+          <!-- select tips label -->
           <label>Select Tip %</label>
+          <!-- select tips container -->
           <div class="spli-tips">
+            <!-- tip = 5% -->
             <button class="btn tip-btn" value="5">5%</button>
+            <!-- tip = 10% -->
             <button class="btn tip-btn" value="10">10%</button>
+            <!-- tip = 15% -->
             <button class="btn tip-btn" value="15">15%</button>
+            <!-- tip = 25% -->
             <button class="btn tip-btn" value="25">25%</button>
+            <!-- tip = 50% -->
             <button class="btn tip-btn" value="50">50%</button>
+            <!-- tip = custom -->
             <input
               id="custom-tip"
               class="spli-tips-custom"
@@ -42,9 +55,11 @@
               placeholder="Custom"
             />
           </div>
-          <label for="">Number of People</label>
+          <!-- number of people label -->
+          <label for="person">Number of People</label>
+          <!-- number of people conainer -->
           <div class="spli-person">
-            <input type="text" placeholder="0" id="person" />
+            <input name="person" type="text" placeholder="0" id="person" />
             <p class="spli-person-error">Can't be zero</p>
             <img
               class="spli-person-person-logo"
@@ -53,21 +68,27 @@
             />
           </div>
         </div>
+        <!-- result cotent -->
         <div class="result">
+          <!-- tip amount / person container -->
           <div class="result-tip">
+            <!-- tip amount / person text -->
             <div class="result-tip-detail">
               <h2>Tip Amount</h2>
               <p>/ person</p>
             </div>
             <h1 id="tipAmount">$0.0</h1>
           </div>
+          <!-- total / person container -->
           <div class="result-total">
+            <!-- total / person text -->
             <div class="result-total-detail">
               <h2>Total</h2>
               <p>/ person</p>
             </div>
             <h1 id="total">$0.0</h1>
           </div>
+          <!-- reset btn -->
           <button class="result-reset btn">Reset</button>
         </div>
       </div>

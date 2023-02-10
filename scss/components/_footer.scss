@@ -4,8 +4,8 @@ footer {
   bottom: 0%;
   left: 50%;
   transform: translate(-50%, 0);
-  background: $cl-Lightgrayishcyan;
-  color: black;
+  background: $cl-Verydarkcyan;
+  color: white;
   padding: 0.2rem 0.35rem;
   font-size: 11px;
   text-align: center;
@@ -13,5 +13,5 @@ footer {
 }
 .attribution a {
   font-weight: bold;
-  color: $cl-Verydarkcyan;
+  color: $cl-Strongcyan;
 }

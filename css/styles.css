@@ -101,7 +101,7 @@ body {
 }
 
 main {
-  width: 100vw;
+  width: 100%;
   margin: 1rem 0;
 }
 main .spli-header {
@@ -235,10 +235,18 @@ main .container .result-reset {
   font-size: 0.8rem;
   margin-top: auto;
   opacity: 0.2;
+  transition: all 250ms linear;
 }
 
-main .active {
+main .container .active {
   visibility: visible;
+}
+main .container .selected-btn {
+  background: hsl(172deg, 67%, 45%);
+  color: hsl(183deg, 100%, 15%);
+}
+main .container .active-reset {
+  opacity: 1;
 }
 
 @media (min-width: 425px) {

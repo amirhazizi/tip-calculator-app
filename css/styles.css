@@ -26,6 +26,24 @@ html {
   font-size: 24px;
 }
 
+footer {
+  position: fixed;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background: hsl(185deg, 41%, 84%);
+  color: black;
+  padding: 0.2rem 0.35rem;
+  font-size: 11px;
+  text-align: center;
+  border-radius: 10px 10px 0 0;
+}
+
+.attribution a {
+  font-weight: bold;
+  color: hsl(183deg, 100%, 15%);
+}
+
 label {
   font-size: 0.6rem;
   color: hsl(186deg, 14%, 43%);
@@ -53,23 +71,26 @@ input::placeholder {
   color: hsl(184deg, 14%, 56%);
   font-size: 0.7rem;
 }
-
-footer {
-  position: fixed;
-  bottom: 0%;
-  left: 50%;
-  transform: translate(-50%, 0);
-  background: hsl(185deg, 41%, 84%);
-  color: black;
-  padding: 0.2rem 0.35rem;
-  font-size: 11px;
-  text-align: center;
-  border-radius: 10px 10px 0 0;
+input:focus {
+  outline-color: hsl(172deg, 67%, 45%);
 }
 
-.attribution a {
-  font-weight: bold;
-  color: hsl(183deg, 100%, 15%);
+.error-input {
+  border: 2px solid red;
+  border-radius: 10px;
+}
+
+main .btn {
+  border: none;
+  font-family: inherit;
+  color: white;
+  background: hsl(183deg, 100%, 15%);
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: all 250ms linear;
+}
+main .btn:hover {
+  background: #009199;
 }
 
 body {
@@ -108,6 +129,16 @@ main .container .spli-bill-dollar {
   left: 0;
   transform: translate(150%, -50%);
 }
+main .container .spli-bill-error {
+  position: absolute;
+  font-size: 0.6rem;
+  color: red;
+  opacity: 0.5;
+  top: 0;
+  right: 0;
+  transform: translate(0%, -125%);
+  visibility: hidden;
+}
 main .container .spli-tips {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
@@ -141,7 +172,7 @@ main .container .spli-person-person-logo {
 }
 main .container .spli-person-error {
   position: absolute;
-  font-size: 0.5rem;
+  font-size: 0.6rem;
   color: red;
   opacity: 0.5;
   top: 0;
@@ -203,20 +234,9 @@ main .container .result-reset {
   text-transform: uppercase;
   font-size: 0.8rem;
   margin-top: auto;
+  opacity: 0.2;
 }
 
-main .btn {
-  border: none;
-  font-family: inherit;
-  color: white;
-  background: hsl(183deg, 100%, 15%);
-  font-size: 1rem;
-  border-radius: 5px;
-  transition: all 250ms linear;
-}
-main .btn:hover {
-  background: #009199;
-}
 main .active {
   visibility: visible;
 }
@@ -250,7 +270,13 @@ main .active {
   main {
     width: 850px;
   }
+  main .container .spli-bill-error {
+    font-size: 0.65rem;
+  }
   main .container .spli-tips {
     grid-template-rows: repeat(auto-fit, minmax(46.77px, 1fr));
+  }
+  main .container .spli-person-error {
+    font-size: 0.65rem;
   }
 }

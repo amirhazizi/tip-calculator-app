@@ -1,0 +1,14 @@
+main {
+  .btn {
+    border: none;
+    font-family: inherit;
+    color: white;
+    background: $cl-Verydarkcyan;
+    font-size: 1rem;
+    border-radius: $radius-1;
+    transition: $transition;
+    &:hover {
+      background: lighten($cl-Verydarkcyan, 15);
+    }
+  }
+}

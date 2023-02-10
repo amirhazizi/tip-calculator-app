@@ -1,6 +1,11 @@
 @import "./utils/config";
 // footer
 @import "./components/footer";
+// inputs and labels
+@import "./components/input";
+// btn
+@import "./components/btns";
+
 body {
   background: $cl-Lightgrayishcyan;
   min-height: 100vh;
@@ -34,6 +39,16 @@ main {
           left: 0;
           transform: translate(150%, -50%);
         }
+        &-error {
+          position: absolute;
+          font-size: 0.6rem;
+          color: red;
+          opacity: 0.5;
+          top: 0;
+          right: 0;
+          transform: translate(0%, -125%);
+          visibility: hidden;
+        }
       }
       &-tips {
         display: grid;
@@ -63,7 +78,7 @@ main {
         }
         &-error {
           position: absolute;
-          font-size: 0.5rem;
+          font-size: 0.6rem;
           color: red;
           opacity: 0.5;
           top: 0;
@@ -126,75 +141,16 @@ main {
         text-transform: uppercase;
         font-size: 0.8rem;
         margin-top: auto;
+        opacity: 0.2;
       }
     }
   }
 }
+// active
 main {
-  .btn {
-    border: none;
-    font-family: inherit;
-    color: white;
-    background: $cl-Verydarkcyan;
-    font-size: 1rem;
-    border-radius: $radius-1;
-    transition: $transition;
-    &:hover {
-      background: lighten($cl-Verydarkcyan, 15);
-    }
-  }
   .active {
     visibility: visible;
   }
 }
-@media (min-width: 425px) {
-  main {
-    .container {
-      .spli {
-        &-tips {
-          grid-template-rows: repeat(auto-fit, minmax(46.77px, 1fr));
-        }
-      }
-    }
-  }
-}
-@media (min-width: 768px) {
-  main {
-    width: 80vw;
-    .spli-header {
-      margin-bottom: 3rem;
-    }
-    .container {
-      grid-template-columns: 1fr 1fr;
-      .spli {
-        &-tips {
-          grid-template-rows: repeat(3, 1fr);
-        }
-      }
-      .result {
-        &-tip {
-          h1 {
-            font-size: 1.8rem;
-          }
-        }
-        &-total {
-          h1 {
-            font-size: 1.8rem;
-          }
-        }
-      }
-    }
-  }
-}
-@media (min-width: 1024px) {
-  main {
-    width: 850px;
-    .container {
-      .spli {
-        &-tips {
-          grid-template-rows: repeat(auto-fit, minmax(46.77px, 1fr));
-        }
-      }
-    }
-  }
-}
+// media queris
+@import "./utils/queris";

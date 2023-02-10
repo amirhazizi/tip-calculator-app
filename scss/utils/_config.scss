@@ -27,25 +27,3 @@ html {
   font-family: "Space Mono", monospace;
   font-size: 24px;
 }
-label {
-  font-size: 0.6rem;
-  color: $cl-Darkgrayishcyan;
-}
-input {
-  display: block;
-  width: 100%;
-  border: none;
-  padding: 0.2rem 0.6rem;
-  margin: 0.1rem 0;
-  padding-top: 0.05rem;
-  background: $cl-Verylightgrayishcyan;
-  border-radius: $radius-1;
-  font-family: inherit;
-  color: $cl-Verydarkcyan;
-  font-size: 1rem;
-  text-align: right;
-  &::placeholder {
-    color: $cl-Grayishcyan;
-    font-size: 0.7rem;
-  }
-}

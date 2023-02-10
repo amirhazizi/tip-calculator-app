@@ -1,0 +1,17 @@
+// footer
+footer {
+  position: fixed;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background: $cl-Lightgrayishcyan;
+  color: black;
+  padding: 0.2rem 0.35rem;
+  font-size: 11px;
+  text-align: center;
+  border-radius: $radius $radius 0 0;
+}
+.attribution a {
+  font-weight: bold;
+  color: $cl-Verydarkcyan;
+}

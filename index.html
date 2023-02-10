@@ -14,9 +14,58 @@
     <title>Frontend Mentor | Tip calculator app</title>
   </head>
   <body>
-    Bill Select Tip % 5% 10% 15% 25% 50% Custom Number of People Tip Amount /
-    person Total / person Reset
-
+    <main>
+      <h1 class="spli-header">spli<br />tter</h1>
+      <div class="container">
+        <div class="spli">
+          <label for="Bill">Bill</label>
+          <div class="spli-bill">
+            <input type="text" name="Bill" placeholder="0" />
+            <img
+              class="spli-bill-dollar"
+              src="./images/icon-dollar.svg"
+              alt=""
+            />
+          </div>
+          <label>Select Tip %</label>
+          <div class="spli-tips">
+            <button class="btn" value="5">5%</button>
+            <button class="btn" value="10">10%</button>
+            <button class="btn" value="15">15%</button>
+            <button class="btn" value="25">25%</button>
+            <button class="btn" value="50">50%</button>
+            <input class="spli-tips-custom" type="text" placeholder="Custom" />
+          </div>
+          <label for="">Number of People</label>
+          <div class="spli-person">
+            <input type="text" placeholder="0" />
+            <img
+              class="spli-person-person-logo"
+              src="./images/icon-person.svg"
+              alt=""
+            />
+            <p class="spli-person-error">Can't be zero</p>
+          </div>
+        </div>
+        <div class="result">
+          <div class="result-tip">
+            <div class="result-tip-detail">
+              <h2>Tip Amount</h2>
+              <p>/ person</p>
+            </div>
+            <h1>$4.27</h1>
+          </div>
+          <div class="result-total">
+            <div class="result-total-detail">
+              <h2>Total</h2>
+              <p>/ person</p>
+            </div>
+            <h1>$32.79</h1>
+          </div>
+          <button class="result-reset btn">Reset</button>
+        </div>
+      </div>
+    </main>
     <!-- footer -->
     <footer class="attribution">
       Challenge by

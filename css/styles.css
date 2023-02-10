@@ -8,7 +8,6 @@
 }
 
 img {
-  width: 100%;
   display: block;
 }
 
@@ -18,9 +17,41 @@ button {
   cursor: pointer;
 }
 
+button {
+  display: inline-block;
+}
+
 html {
   font-family: "Space Mono", monospace;
   font-size: 24px;
+}
+
+label {
+  font-size: 0.6rem;
+  color: hsl(186deg, 14%, 43%);
+}
+
+input {
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 0.2rem 0.6rem;
+  margin: 0.1rem 0;
+  padding-top: 0.05rem;
+  background: hsl(189deg, 41%, 97%);
+  border-radius: 5px;
+  font-family: inherit;
+  color: hsl(183deg, 100%, 15%);
+  font-size: 1rem;
+  text-align: right;
+}
+input::-moz-placeholder {
+  color: hsl(184deg, 14%, 56%);
+  font-size: 0.7rem;
+}
+input::placeholder {
+  color: hsl(184deg, 14%, 56%);
+  font-size: 0.7rem;
 }
 
 footer {
@@ -39,4 +70,187 @@ footer {
 .attribution a {
   font-weight: bold;
   color: hsl(183deg, 100%, 15%);
+}
+
+body {
+  background: hsl(185deg, 41%, 84%);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+main {
+  width: 100vw;
+  margin: 1rem 0;
+}
+main .spli-header {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+  color: hsl(183deg, 100%, 15%);
+}
+main .container {
+  padding: 1rem 1.3rem;
+  background: white;
+  border-radius: 25px;
+  display: grid;
+  gap: 1rem;
+}
+main .container .spli-bill {
+  position: relative;
+  margin-bottom: 1rem;
+}
+main .container .spli-bill-dollar {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(150%, -50%);
+}
+main .container .spli-tips {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0.7rem;
+  margin: 0.5rem 0;
+  margin-bottom: 0.7rem;
+}
+main .container .spli-tips-custom {
+  height: 100%;
+  align-self: center;
+  font-size: 1rem;
+}
+main .container .spli-tips-custom::-moz-placeholder {
+  text-align: center;
+  font-size: 1rem;
+}
+main .container .spli-tips-custom::placeholder {
+  text-align: center;
+  font-size: 1rem;
+}
+main .container .spli-person {
+  position: relative;
+  margin-bottom: 1rem;
+}
+main .container .spli-person-person-logo {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(150%, -50%);
+}
+main .container .spli-person-error {
+  position: absolute;
+  font-size: 0.5rem;
+  color: red;
+  opacity: 0.5;
+  top: 0;
+  right: 0;
+  transform: translate(0%, -125%);
+  visibility: hidden;
+}
+main .container .result {
+  background: hsl(183deg, 100%, 15%);
+  color: white;
+  padding: 1.5rem 1rem;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+main .container .result-tip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .container .result-tip-detail {
+  line-height: 1.65;
+}
+main .container .result-tip-detail h2 {
+  font-size: 0.6rem;
+}
+main .container .result-tip-detail p {
+  font-size: 0.5rem;
+  color: hsl(184deg, 14%, 56%);
+}
+main .container .result-tip h1 {
+  color: hsl(172deg, 67%, 45%);
+  font-size: 1.4rem;
+}
+main .container .result-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .container .result-total-detail {
+  line-height: 1.65;
+}
+main .container .result-total-detail h2 {
+  font-size: 0.6rem;
+}
+main .container .result-total-detail p {
+  font-size: 0.5rem;
+  color: hsl(184deg, 14%, 56%);
+}
+main .container .result-total h1 {
+  color: hsl(172deg, 67%, 45%);
+  font-size: 1.4rem;
+}
+main .container .result-reset {
+  background: hsl(172deg, 67%, 45%);
+  padding: 0.35rem 0;
+  color: hsl(183deg, 100%, 15%);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-top: auto;
+}
+
+main .btn {
+  border: none;
+  font-family: inherit;
+  color: white;
+  background: hsl(183deg, 100%, 15%);
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: all 250ms linear;
+}
+main .btn:hover {
+  background: #009199;
+}
+main .active {
+  visibility: visible;
+}
+
+@media (min-width: 425px) {
+  main .container .spli-tips {
+    grid-template-rows: repeat(auto-fit, minmax(46.77px, 1fr));
+  }
+}
+@media (min-width: 768px) {
+  main {
+    width: 80vw;
+  }
+  main .spli-header {
+    margin-bottom: 3rem;
+  }
+  main .container {
+    grid-template-columns: 1fr 1fr;
+  }
+  main .container .spli-tips {
+    grid-template-rows: repeat(3, 1fr);
+  }
+  main .container .result-tip h1 {
+    font-size: 1.8rem;
+  }
+  main .container .result-total h1 {
+    font-size: 1.8rem;
+  }
+}
+@media (min-width: 1024px) {
+  main {
+    width: 850px;
+  }
+  main .container .spli-tips {
+    grid-template-rows: repeat(auto-fit, minmax(46.77px, 1fr));
+  }
 }

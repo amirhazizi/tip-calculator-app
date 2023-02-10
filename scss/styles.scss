@@ -1,3 +1,200 @@
 @import "./utils/config";
 // footer
 @import "./components/footer";
+body {
+  background: $cl-Lightgrayishcyan;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+main {
+  width: 100vw;
+  margin: 1rem 0;
+  .spli-header {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    color: $cl-Verydarkcyan;
+  }
+  .container {
+    padding: 1rem 1.3rem;
+    background: white;
+    border-radius: $radius-3;
+    display: grid;
+    gap: 1rem;
+    .spli {
+      &-bill {
+        position: relative;
+        margin-bottom: 1rem;
+        &-dollar {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translate(150%, -50%);
+        }
+      }
+      &-tips {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
+        grid-template-rows: repeat(3, 1fr);
+        gap: 0.7rem;
+        margin: 0.5rem 0;
+        margin-bottom: 0.7rem;
+        &-custom {
+          height: 100%;
+          align-self: center;
+          font-size: 1rem;
+          &::placeholder {
+            text-align: center;
+            font-size: 1rem;
+          }
+        }
+      }
+      &-person {
+        position: relative;
+        margin-bottom: 1rem;
+        &-person-logo {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translate(150%, -50%);
+        }
+        &-error {
+          position: absolute;
+          font-size: 0.5rem;
+          color: red;
+          opacity: 0.5;
+          top: 0;
+          right: 0;
+          transform: translate(0%, -125%);
+          visibility: hidden;
+        }
+      }
+    }
+    .result {
+      background: $cl-Verydarkcyan;
+      color: white;
+      padding: 1.5rem 1rem;
+      border-radius: $radius-3;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      &-tip {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &-detail {
+          line-height: 1.65;
+          h2 {
+            font-size: 0.6rem;
+          }
+          p {
+            font-size: 0.5rem;
+            color: $cl-Grayishcyan;
+          }
+        }
+        h1 {
+          color: $cl-Strongcyan;
+          font-size: 1.4rem;
+        }
+      }
+      &-total {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &-detail {
+          line-height: 1.65;
+          h2 {
+            font-size: 0.6rem;
+          }
+          p {
+            font-size: 0.5rem;
+            color: $cl-Grayishcyan;
+          }
+        }
+        h1 {
+          color: $cl-Strongcyan;
+          font-size: 1.4rem;
+        }
+      }
+      &-reset {
+        background: $cl-Strongcyan;
+        padding: 0.35rem 0;
+        color: $cl-Verydarkcyan;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        margin-top: auto;
+      }
+    }
+  }
+}
+main {
+  .btn {
+    border: none;
+    font-family: inherit;
+    color: white;
+    background: $cl-Verydarkcyan;
+    font-size: 1rem;
+    border-radius: $radius-1;
+    transition: $transition;
+    &:hover {
+      background: lighten($cl-Verydarkcyan, 15);
+    }
+  }
+  .active {
+    visibility: visible;
+  }
+}
+@media (min-width: 425px) {
+  main {
+    .container {
+      .spli {
+        &-tips {
+          grid-template-rows: repeat(auto-fit, minmax(46.77px, 1fr));
+        }
+      }
+    }
+  }
+}
+@media (min-width: 768px) {
+  main {
+    width: 80vw;
+    .spli-header {
+      margin-bottom: 3rem;
+    }
+    .container {
+      grid-template-columns: 1fr 1fr;
+      .spli {
+        &-tips {
+          grid-template-rows: repeat(3, 1fr);
+        }
+      }
+      .result {
+        &-tip {
+          h1 {
+            font-size: 1.8rem;
+          }
+        }
+        &-total {
+          h1 {
+            font-size: 1.8rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1024px) {
+  main {
+    width: 850px;
+    .container {
+      .spli {
+        &-tips {
+          grid-template-rows: repeat(auto-fit, minmax(46.77px, 1fr));
+        }
+      }
+    }
+  }
+}

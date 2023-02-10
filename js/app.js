@@ -65,8 +65,8 @@ function calculateTip(bill, tip, persons) {
   if (bill && tip && persons) {
     const tipAmo = (bill * tip) / 100 / persons
     const totalAmo = bill / persons + tip
-    tipAmount.textContent = `$${tipAmo.toFixed(1)}`
-    total.textContent = `$${totalAmo.toFixed(1)}`
+    tipAmount.textContent = `$${tipAmo.toFixed(2)}`
+    total.textContent = `$${totalAmo.toFixed(2)}`
     if (!resetBtn.classList.contains("active-reset")) {
       resetBtn.classList.add("active-reset")
     }

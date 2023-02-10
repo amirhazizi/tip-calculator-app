@@ -1,5 +1,6 @@
 const billInput = document.querySelector("#bill")
 const tipsBtn = document.querySelectorAll(".tip-btn")
+const customTip = document.querySelector("#custom-tip")
 const personInput = document.querySelector("#person")
 const tipAmount = document.querySelector("#tipAmount")
 const total = document.querySelector("#total")
@@ -18,7 +19,7 @@ personInput.addEventListener("keyup", () => {
   persons = parseInt(personInput.value)
   calculateTip(bill, tip, persons)
 })
-// get tip for tip btns
+// get tip from tip btns
 tipsBtn.forEach((btn) => {
   btn.addEventListener("click", () => {
     tipsBtn.forEach((b) => {
@@ -32,7 +33,15 @@ tipsBtn.forEach((btn) => {
     calculateTip(bill, tip, persons)
   })
 })
-
+// get tip from tip custom input
+customTip.addEventListener("keyup", () => {
+  tip = parseInt(customTip.value)
+  calculateTip(bill, tip, persons)
+  tipsBtn.forEach((btn) => {
+    if (btn.classList.contains("selected-btn"))
+      btn.classList.remove("selected-btn")
+  })
+})
 // function input error checker
 function activeError(selection, value) {
   if (!value || value <= 0) {
@@ -57,7 +66,7 @@ function calculateTip(bill, tip, persons) {
     const tipAmo = (bill * tip) / 100 / persons
     const totalAmo = bill / persons + tip
     tipAmount.textContent = `$${tipAmo.toFixed(1)}`
-    total.textContent = `$${totalAmo.toFixed(2)}`
+    total.textContent = `$${totalAmo.toFixed(1)}`
     if (!resetBtn.classList.contains("active-reset")) {
       resetBtn.classList.add("active-reset")
     }

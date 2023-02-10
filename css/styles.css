@@ -257,6 +257,7 @@ main .container .active-reset {
 @media (min-width: 768px) {
   main {
     width: 80vw;
+    margin-top: -1rem;
   }
   main .spli-header {
     margin-bottom: 3rem;
